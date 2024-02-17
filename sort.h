@@ -21,9 +21,12 @@ typedef struct listint_s
 } listint_t;
 
 /* Function prototypes */
-
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
+void heap_sort(int *array, size_t size);
+void sift_down(int *array, size_t root, size_t size, size_t base);
 
+/* Auxilliary(helper) function prototypes */
+void swap(int *x, int *y);
 
 #endif /* SORT_H */
