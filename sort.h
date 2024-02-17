@@ -26,4 +26,19 @@ void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
 void radix_sort(int *array, size_t size);
 
+/* Structure for the Radix sort algorithm */
+
+/**
+ * struct digit_node - Structure to represent a node in a linked list of
+ * digits.
+ *
+ * @value: Value of the digit.
+ * @next: Pointer to the next digit node.
+ */
+typedef struct digit_node
+{
+	int value;
+	struct digit_node *next;
+} digit_node;
+
 #endif /* SORT_H */
