@@ -65,6 +65,7 @@ void merge_sort(int *array, size_t size)
 {
 	int *working_array;
 
+	/* Check if array is empty or has only 1 element */
 	if (array == NULL || size < 2)
 		return;
 
@@ -72,6 +73,7 @@ void merge_sort(int *array, size_t size)
 	if (working_array == NULL)
 		return;
 
+	/* Call helper function to split and merge the array */
 	split_and_merge(0, size, array, working_array);
 
 	free(working_array);
@@ -96,10 +98,16 @@ void split_and_merge(int start_index, int end_index, int *original_array,
 	if (end_index - start_index < 2)
 		return;
 
+	/* Calculate the midpoint of the array */
 	mid_index = (start_index + end_index) / 2;
+
+	/* Recursively split and merge the left half of the array */
 	split_and_merge(start_index, mid_index, original_array, working_array);
+
+	/* Recursively split and merge the right half of the array */
 	split_and_merge(mid_index, end_index, original_array, working_array);
 
+	/* Now merge the two sorted halves of the array */
 	merge(original_array, mid_index, end_index, start_index,
 			working_array);
 }
@@ -131,24 +139,31 @@ void merge(int *original_array, size_t mid_index, size_t end_index, size_t
 
 	print_array(&original_array[mid_index], end_index - mid_index);
 
+	/* Merge the two sorted subarrays */
 	for (merged_index = start_index; merged_index <= end_index;
 			merged_index++)
 	{
 		if (left_index < mid_index && (right_index >= end_index ||
 			original_array[left_index] <= original_array[right_index]))
 		{
+			/* Copy the element from the left subarray */
 			working_array[merged_index] = original_array[left_index];
 			left_index++;
 		}
 		else
 		{
+			/* Copy the element from the right subarray */
 			working_array[merged_index] = original_array[right_index];
 			right_index++;
 		}
 	}
+	/* Copy the merged array back to the original array */
 	copy_array(original_array, working_array, end_index);
 
 	printf("[Done]: ");
+
+
+	/* Print the merged array */
 	print_array(&original_array[start_index], end_index - start_index);
 }
 
@@ -165,6 +180,7 @@ void copy_array(int *destination, int *source, size_t size)
 {
 	size_t index = 0;
 
+	/* Copy elements from the source array to the destination array */
 	for (index = 0; index <= size; index++)
 	{
 		destination[index] = source[index];
