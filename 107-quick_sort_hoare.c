@@ -6,10 +6,10 @@
  * @array: Pointer to the array to be sorted.
  * @size: Size of the array.
  *
- * This function sorts the given array in ascending order using the quicksort
- * algorithm with the Hoare partition scheme. It first checks for edge cases,
- * such as a NULL array or an array with less than 2 elements, and returns
- * if needed.
+ * Description: This function sorts the given array in ascending order
+ * using the quicksort algorithm with the Hoare partition scheme.
+ * It first checks for edge cases, such as a NULL array or an array with
+ * less than 2 elements, and returns if needed.
  * Then, it calls the _quicksort function to perform the actual sorting.
  */
 void quick_sort_hoare(int *array, size_t size)
