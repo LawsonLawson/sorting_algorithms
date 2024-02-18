@@ -1,7 +1,6 @@
 #ifndef SORT_H
 #define SORT_H
 
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -24,9 +23,13 @@ typedef struct listint_s
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
 void heap_sort(int *array, size_t size);
-void sift_down(int *array, size_t root, size_t size, size_t base);
+void bitonic_sort(int *array, size_t size);
 
 /* Auxilliary(helper) function prototypes */
 void swap(int *x, int *y);
+void sift_down(int *array, size_t root, size_t size, size_t base);
+void bitonic_merge(int *array, size_t size, size_t seq, char flow);
+void bitonic_seq(int *array, size_t size, size_t seq, char flow);
+
 
 #endif /* SORT_H */
