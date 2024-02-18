@@ -76,7 +76,7 @@ void bitonic_seq(int *array, size_t size, size_t seq, char flow)
  */
 void bitonic_merge(int *array, size_t size, size_t seq, char flow)
 {
-	size_t i;
+	size_t i, mid = size / 2;
 
 	for (i = 0; i < seq; i++)
 	{
@@ -92,7 +92,7 @@ void bitonic_merge(int *array, size_t size, size_t seq, char flow)
 		return;
 
 	/* Recursively perform bitonic merge on the smaller subsequence */
-	bitonic_merge(array, size / 2, seq, flow);
+	bitonic_merge(array, mid, seq, flow);
 }
 
 
