@@ -24,12 +24,15 @@ void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
 void heap_sort(int *array, size_t size);
 void bitonic_sort(int *array, size_t size);
+void quick_sort_hoare(int *array, size_t size);
 
 /* Auxilliary(helper) function prototypes */
 void swap(int *x, int *y);
 void sift_down(int *array, size_t root, size_t size, size_t base);
 void bitonic_merge(int *array, size_t size, size_t seq, char flow);
 void bitonic_seq(int *array, size_t size, size_t seq, char flow);
+void _quicksort(int *array, int size, int left, int right, int part_idx);
+int partition(int *array, int size, int left, int right);
 
 
 #endif /* SORT_H */
