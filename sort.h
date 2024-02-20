@@ -31,6 +31,7 @@ void cocktail_sort_list(listint_t **list);
 void counting_sort(int *array, size_t size);
 void merge_sort(int *array, size_t size);
 void heap_sort(int *array, size_t size);
+void radix_sort(int *array, size_t size);
 void bitonic_sort(int *array, size_t size);
 void quick_sort_hoare(int *array, size_t size);
 
@@ -41,5 +42,21 @@ void bitonic_merge(int *array, size_t size, size_t seq, char flow);
 void bitonic_seq(int *array, size_t size, size_t seq, char flow);
 void _quicksort(int *array, int size, int left, int right, int part_idx);
 int partition(int *array, int size, int left, int right);
+
+/* Structure for the Radix sort algorithm */
+
+/**
+ * struct digit_node - Structure to represent a node in a linked list of
+ * digits.
+ *
+ * @value: Value of the digit.
+ * @next: Pointer to the next digit node.
+ */
+typedef struct digit_node
+{
+	int value;
+	struct digit_node *next;
+} digit_node;
+
 
 #endif /* SORT_H */
