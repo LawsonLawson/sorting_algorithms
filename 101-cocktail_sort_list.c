@@ -51,7 +51,7 @@ void cocktail_sort_list(listint_t **list)
 	int swap_flag = 0; /* To track wether any swaps occured in a pass */
 
 	/* Check if the list is NULL or has 1 or 0 elements */
-	if (!list || ((*list == NULL) || ((*list)->next == NULL)))
+	if (list == NULL || (*list) == NULL || (*list)->next == NULL)
 		return;
 
 	/* Set list_start, list_end, and current_node pointers */
