@@ -181,7 +181,7 @@ void copy_array(int *destination, int *source, size_t size)
 	size_t index = 0;
 
 	/* Copy elements from the source array to the destination array */
-	for (index = 0; index <= size; index++)
+	for (index = 0; index < size; index++)
 	{
 		destination[index] = source[index];
 	}
