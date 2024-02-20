@@ -158,7 +158,8 @@ void merge(int *original_array, size_t mid_index, size_t end_index, size_t
 		}
 	}
 	/* Copy the merged array back to the original array */
-	copy_array(original_array, working_array, end_index);
+	copy_array(original_array + start_index, working_array + start_index,
+			end_index - start_index);
 
 	printf("[Done]: ");
 
