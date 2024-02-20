@@ -69,7 +69,7 @@ void merge_sort(int *array, size_t size)
 	if (array == NULL || size < 2)
 		return;
 
-	working_array = malloc((size + 1) * sizeof(int));
+	working_array = malloc(size + 1 * sizeof(int));
 	if (working_array == NULL)
 		return;
 
@@ -131,7 +131,7 @@ void merge(int *original_array, size_t mid_index, size_t end_index, size_t
 	size_t right_index = mid_index;
 	size_t merged_index = 0;
 
-	printf("Mergin...\n");
+	printf("Merging...\n");
 	printf("[left]: ");
 
 	print_array(&original_array[start_index], mid_index - start_index);
@@ -186,4 +186,3 @@ void copy_array(int *destination, int *source, size_t size)
 		destination[index] = source[index];
 	}
 }
-
